@@ -1,0 +1,20 @@
+# Processing specific
+application.*
+out/
+build/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.vscode/
+.idea/
+
+# Compiled files
+*.class
+*.jar
+
+# Backup files
+*.bak
+*~
