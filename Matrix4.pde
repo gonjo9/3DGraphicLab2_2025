@@ -44,22 +44,41 @@ static class Matrix4{
     makeIdentity();
   }
   void makeRotZ(float a) {
-     // TODO HW2
-     // You need to implement the rotation of z-axis matrix here. (Yaw)
+    // TODO HW2 DONE
+    // Z-axis rotation matrix
     makeIdentity();
 
-  }
+    // Set rotation angle (in radians)
+    float cosA = cos(a);
+    float sinA = sin(a);
+
+    // Rotation matrix around Z-axis
+    m[0] = cosA;   m[1] = -sinA;  // First row
+    m[4] = sinA;   m[5] = cosA;   // Second row
+
+    // Other values remain unchanged (set by makeIdentity)
+    // m[10] = 1.0f (Z-axis remains unchanged)
+    // m[15] = 1.0f (homogeneous coordinate)
+}
   
   void makeTrans(Vector3 t) {
-    // TODO HW2
-    // You need to implement the translate matrix here.
+    // TODO HW2 DONE 
     makeIdentity();
     
-  }
+    // Set translation components (last column)
+    m[3] = t.x;   // Translation in x
+    m[7] = t.y;   // Translation in y
+    m[11] = t.z;  // Translation in z
+}
   void makeScale(Vector3 s) {
-    // TODO HW2
-    // You need to implement the scale matrix here.
+    // TODO HW2 DONE
     makeIdentity();
+    
+    // Set scaling factors along diagonal
+    m[0] = s.x;   // Scale in x
+    m[5] = s.y;   // Scale in y
+    m[10] = s.z;  // Scale in z
+    // m[15] remains 1.0 from makeIdentity()
   }
   
   void makeMirror(){
