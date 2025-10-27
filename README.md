@@ -1,4 +1,4 @@
-# 計算機圖學實驗2
+# 3DGraphicLab2
 
 ## 1. Translation Matrix
 
